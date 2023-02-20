@@ -1,0 +1,50 @@
+.contentEditableContainer {
+  position: relative;
+  background: #fff;
+}
+
+.contentEditableContainerDisabled {
+  background: #fafafa;
+}
+
+.contentEditable {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: solid 1px #bbb;
+  min-height: 120px;
+  box-sizing: border-box;
+  outline: 0;
+  overflow-y: auto;
+  width: 100%;
+  padding: 10px;
+  font-style: unset;
+}
+
+.placeholder {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  margin: 11px 0 0 11px;
+  color: #bbb;
+  user-select: none;
+  pointer-events: none;
+}
+
+.toolbarDisabled {
+  background: #f8f8f8;
+  cursor: default;
+}
+
+.toolbarTop {
+  margin-bottom: -1px;
+}
+
+.toolbarBottom {
+  margin-top: -1px;
+}
+
+.contentEditableDisabled {
+  color: #888;
+  cursor: default;
+}

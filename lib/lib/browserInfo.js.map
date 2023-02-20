@@ -1,0 +1,1 @@
+{"version":3,"file":"browserInfo.js","sourceRoot":"","sources":["../../src/lib/browserInfo.ts"],"names":[],"mappings":"AAIA,IAAI,WAAW,GAAuB,IAAI,CAAC;AAE3C,MAAM,UAAU,cAAc;IAC5B,IAAI,CAAC,WAAW,EAAE;QAChB,WAAW,GAAG;YACZ,KAAK,EAAE,UAAU,CAAC,IAAI,CAAC,SAAS,CAAC,SAAS,CAAC;SAC5C,CAAC;KACH;IACD,OAAO,WAAW,CAAC;AACrB,CAAC"}

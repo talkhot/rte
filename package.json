@@ -1,6 +1,6 @@
 {
   "name": "@coralproject/rte",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "Coral Rich Text Editor",
   "author": "The Coral Project Team @coralproject",
   "license": "Apache-2.0",
@@ -61,25 +61,17 @@
     "webpack-dev-server": "^3.11.1"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "squire-rte": "1.11.0"
-  },
-  "dependencies-pins-documentation": {
-    "squire-rte@1.1.0": [
-      "Newer versions have problems with line breaks in iOS.",
-      "Update when the following issue is resolved:",
-      "https://github.com/neilj/Squire/issues/413"
-    ]
+    "squire-rte": "^2.0.1"
   },
   "browsers": [
     ">1%",
     "last 4 versions",
     "Firefox ESR",
-    "IE 11",
     "not dead"
   ]
 }
