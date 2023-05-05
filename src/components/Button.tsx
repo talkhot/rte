@@ -9,17 +9,27 @@ export interface ButtonPropTypes
   children?: React.ReactNode;
   active?: boolean;
   component?: React.ComponentType<any>;
+  role?: string;
+  ariaLabel?: string;
 }
 
 class Button extends React.Component<ButtonPropTypes> {
   public render(): React.ReactNode {
-    const { className, children, active, component, ...rest } = this.props;
+    const {
+      className,
+      children,
+      active,
+      component,
+      ariaLabel,
+      ...rest
+    } = this.props;
     const Component = component || "button";
     return (
       <Component
         type="button"
         className={cn(className, { [styles?.button]: !component })}
         aria-pressed={active}
+        aria-label={ariaLabel}
         {...rest}
       >
         {children}

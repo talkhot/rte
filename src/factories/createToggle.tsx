@@ -9,6 +9,8 @@ export interface TogglePropTypes {
   title?: string;
   children?: React.ReactNode;
   disabled?: boolean;
+  role?: string;
+  ariaLabel?: string;
 }
 
 /** InjectedProps are props injected by the RTE */
@@ -174,6 +176,8 @@ function createToggle<AdditionalProps>(
         children,
         disabled,
         ButtonComponent,
+        role,
+        ariaLabel,
       } = this.props;
       return (
         <Button
@@ -183,6 +187,8 @@ function createToggle<AdditionalProps>(
           active={this.state.active}
           disabled={disabled || this.state.disabled}
           component={ButtonComponent}
+          role={role}
+          ariaLabel={ariaLabel}
         >
           {children}
         </Button>

@@ -4,6 +4,8 @@ export interface ButtonPropTypes extends ButtonHTMLAttributes<HTMLButtonElement>
     children?: React.ReactNode;
     active?: boolean;
     component?: React.ComponentType<any>;
+    role?: string;
+    ariaLabel?: string;
 }
 declare class Button extends React.Component<ButtonPropTypes> {
     render(): React.ReactNode;

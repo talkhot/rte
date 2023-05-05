@@ -67,9 +67,9 @@ var Button = /** @class */ (function (_super) {
     }
     Button.prototype.render = function () {
         var _a;
-        var _b = this.props, className = _b.className, children = _b.children, active = _b.active, component = _b.component, rest = __rest(_b, ["className", "children", "active", "component"]);
+        var _b = this.props, className = _b.className, children = _b.children, active = _b.active, component = _b.component, ariaLabel = _b.ariaLabel, rest = __rest(_b, ["className", "children", "active", "component", "ariaLabel"]);
         var Component = component || "button";
-        return (react_1.default.createElement(Component, __assign({ type: "button", className: classnames_1.default(className, (_a = {}, _a[styles === null || styles === void 0 ? void 0 : styles.button] = !component, _a)), "aria-pressed": active }, rest), children));
+        return (react_1.default.createElement(Component, __assign({ type: "button", className: classnames_1.default(className, (_a = {}, _a[styles === null || styles === void 0 ? void 0 : styles.button] = !component, _a)), "aria-pressed": active, "aria-label": ariaLabel }, rest), children));
     };
     return Button;
 }(react_1.default.Component));

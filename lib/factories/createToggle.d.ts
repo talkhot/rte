@@ -5,6 +5,8 @@ export interface TogglePropTypes {
     title?: string;
     children?: React.ReactNode;
     disabled?: boolean;
+    role?: string;
+    ariaLabel?: string;
 }
 /** InjectedProps are props injected by the RTE */
 export interface InjectedProps {

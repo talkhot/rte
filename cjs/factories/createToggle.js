@@ -104,8 +104,8 @@ function createToggle(execCommand, _a) {
             this.unmounted = true;
         };
         Toggle.prototype.render = function () {
-            var _a = this.props, className = _a.className, title = _a.title, children = _a.children, disabled = _a.disabled, ButtonComponent = _a.ButtonComponent;
-            return (react_1.default.createElement(Button_1.default, { className: className, title: title, onClick: this.handleClick, active: this.state.active, disabled: disabled || this.state.disabled, component: ButtonComponent }, children));
+            var _a = this.props, className = _a.className, title = _a.title, children = _a.children, disabled = _a.disabled, ButtonComponent = _a.ButtonComponent, role = _a.role, ariaLabel = _a.ariaLabel;
+            return (react_1.default.createElement(Button_1.default, { className: className, title: title, onClick: this.handleClick, active: this.state.active, disabled: disabled || this.state.disabled, component: ButtonComponent, role: role, ariaLabel: ariaLabel }, children));
         };
         return Toggle;
     }(react_1.default.Component));
