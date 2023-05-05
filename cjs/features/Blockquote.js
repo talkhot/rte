@@ -15,7 +15,7 @@ function execCommand(squire) {
 function isActive(squire) {
     return squire.hasFormat("BLOCKQUOTE");
 }
-var Blockquote = createToggle_1.default(execCommand, { isActive: isActive });
+var Blockquote = (0, createToggle_1.default)(execCommand, { isActive: isActive });
 Blockquote.defaultProps = {
     children: "Blockquote",
 };

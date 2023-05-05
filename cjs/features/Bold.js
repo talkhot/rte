@@ -15,7 +15,7 @@ function execCommand(squire) {
 function isActive(squire) {
     return squire.hasFormat("B");
 }
-var Bold = createToggle_1.default(execCommand, {
+var Bold = (0, createToggle_1.default)(execCommand, {
     isActive: isActive,
     shortcuts: function (ctrlKey) {
         var _a;

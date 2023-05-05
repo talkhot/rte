@@ -15,7 +15,7 @@ function execCommand(squire) {
 function isActive(squire) {
     return squire.hasFormat("OL");
 }
-var OrderedList = createToggle_1.default(execCommand, { isActive: isActive });
+var OrderedList = (0, createToggle_1.default)(execCommand, { isActive: isActive });
 OrderedList.defaultProps = {
     children: "Ordered List",
 };

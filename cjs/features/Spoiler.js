@@ -18,7 +18,7 @@ function isActive(squire, props) {
     var attributes = { class: props.spoilerClassName };
     return squire.hasFormat("SPAN", attributes);
 }
-var Spoiler = createToggle_1.default(execCommand, {
+var Spoiler = (0, createToggle_1.default)(execCommand, {
     isActive: isActive,
 });
 Spoiler.defaultProps = {

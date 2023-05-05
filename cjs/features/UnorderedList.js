@@ -15,7 +15,7 @@ function execCommand(squire) {
 function isActive(squire) {
     return squire.hasFormat("UL");
 }
-var UnorderedList = createToggle_1.default(execCommand, { isActive: isActive });
+var UnorderedList = (0, createToggle_1.default)(execCommand, { isActive: isActive });
 UnorderedList.defaultProps = {
     children: "Unordered List",
 };

@@ -33,7 +33,7 @@ function isDisabled(squire) {
     });
     return blockOverwrites;
 }
-var Strike = createToggle_1.default(execCommand, {
+var Strike = (0, createToggle_1.default)(execCommand, {
     isActive: isActive,
     isDisabled: isDisabled,
     shortcuts: function (ctrlKey) {

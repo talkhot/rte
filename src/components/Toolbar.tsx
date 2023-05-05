@@ -5,12 +5,13 @@ import * as styles from "./Toolbar.module.css";
 
 export interface ToolbarPropTypes {
   className?: string;
+  children?: React.ReactNode[] | React.ReactNode;
 }
 
 class Toolbar extends React.Component<ToolbarPropTypes> {
   public render(): React.ReactNode {
     const { className, ...rest } = this.props;
-    return <div className={cn(className, styles?.toolbar)} {...rest} />;
+    return <div className={cn(className, styles.toolbar)} {...rest} />;
   }
 }
 

@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -25,7 +27,11 @@ var __assign = (this && this.__assign) || function () {
 };
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -68,7 +74,7 @@ var RTE = /** @class */ (function (_super) {
         _this.focus = function () { return _this.squire.focus(); };
         /** Is focus somewhere inside the root container */
         _this.focusInsideRoot = false;
-        _this.ctrlKey = browserInfo_1.getBrowserInfo().macOS ? "meta-" : "ctrl-";
+        _this.ctrlKey = (0, browserInfo_1.getBrowserInfo)().macOS ? "meta-" : "ctrl-";
         _this.initSquire = function () {
             _this.squire = new squire_rte_1.default(_this.contentEditableRef, {
                 isInsertedHTMLSanitized: Boolean(_this.props.sanitizeToDOMFragment),
@@ -119,7 +125,7 @@ var RTE = /** @class */ (function (_super) {
             if (_this.props.linkContentMatchHref) {
                 // Forces link contents to match their href target.
                 _this.squire.modifyDocument(function () {
-                    syncLinkHrefWithContent_1.default(getHTMLElement_1.default(_this.squire.getSelection().commonAncestorContainer));
+                    (0, syncLinkHrefWithContent_1.default)((0, getHTMLElement_1.default)(_this.squire.getSelection().commonAncestorContainer));
                 });
             }
             if (_this.props.onChange) {
@@ -269,24 +275,24 @@ var RTE = /** @class */ (function (_super) {
         var _a, _b, _c, _d, _e;
         var _f = this.props, disabled = _f.disabled, toolbarPosition = _f.toolbarPosition;
         return {
-            toolbar: classnames_1.default(this.props.toolbarClassName, (_a = {},
+            toolbar: (0, classnames_1.default)(this.props.toolbarClassName, (_a = {},
                 _a[this.props.toolbarClassNameDisabled] = disabled,
-                _a[styles === null || styles === void 0 ? void 0 : styles.toolbarDisabled] = disabled,
-                _a[styles === null || styles === void 0 ? void 0 : styles.toolbarTop] = toolbarPosition === "top",
-                _a[styles === null || styles === void 0 ? void 0 : styles.toolbarBottom] = toolbarPosition === "bottom",
+                _a[styles.toolbarDisabled] = disabled,
+                _a[styles.toolbarTop] = toolbarPosition === "top",
+                _a[styles.toolbarBottom] = toolbarPosition === "bottom",
                 _a)),
-            contentContainer: classnames_1.default(styles === null || styles === void 0 ? void 0 : styles.contentEditableContainer, this.props.contentContainerClassName, (_b = {},
+            contentContainer: (0, classnames_1.default)(styles.contentEditableContainer, this.props.contentContainerClassName, (_b = {},
                 _b[this.props.contentContainerClassNameDisabled] = disabled,
-                _b[styles === null || styles === void 0 ? void 0 : styles.contentEditableContainerDisabled] = disabled,
+                _b[styles.contentEditableContainerDisabled] = disabled,
                 _b)),
-            content: classnames_1.default(styles === null || styles === void 0 ? void 0 : styles.contentEditable, this.props.contentClassName, (_c = {},
+            content: (0, classnames_1.default)(styles.contentEditable, this.props.contentClassName, (_c = {},
                 _c[this.props.contentClassNameDisabled] = disabled,
-                _c[styles === null || styles === void 0 ? void 0 : styles.contentEditableDisabled] = disabled,
+                _c[styles.contentEditableDisabled] = disabled,
                 _c)),
-            root: classnames_1.default(styles === null || styles === void 0 ? void 0 : styles.root, this.props.className, (_d = {},
+            root: (0, classnames_1.default)(this.props.className, (_d = {},
                 _d[this.props.classNameDisabled] = disabled,
                 _d)),
-            placeholder: classnames_1.default(styles === null || styles === void 0 ? void 0 : styles.placeholder, this.props.placeholderClassName, (_e = {},
+            placeholder: (0, classnames_1.default)(styles.placeholder, this.props.placeholderClassName, (_e = {},
                 _e[this.props.placeholderClassNameDisabled] = disabled,
                 _e)),
         };

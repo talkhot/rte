@@ -30,7 +30,7 @@ function isDisabled(squire) {
     });
     return blockOverwrites;
 }
-var Italic = createToggle_1.default(execCommand, {
+var Italic = (0, createToggle_1.default)(execCommand, {
     isActive: isActive,
     isDisabled: isDisabled,
     shortcuts: function (ctrlKey) {

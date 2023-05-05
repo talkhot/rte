@@ -13,8 +13,8 @@ import Toolbar from "./components/Toolbar";
 import { getBrowserInfo } from "./lib/browserInfo";
 import getHTMLElement from "./lib/getHTMLElement";
 import syncLinkHrefWithContent from "./lib/syncLinkHrefWithContent";
-import * as styles from "./RTE.module.css";
 import { InjectedProps } from "./factories/createToggle";
+import * as styles from "./RTE.module.css";
 
 export interface Feature {
   onPathChange?: () => void;
@@ -388,26 +388,26 @@ class RTE extends React.Component<PropTypes, State> {
     return {
       toolbar: cn(this.props.toolbarClassName, {
         [this.props.toolbarClassNameDisabled!]: disabled,
-        [styles?.toolbarDisabled]: disabled,
-        [styles?.toolbarTop]: toolbarPosition === "top",
-        [styles?.toolbarBottom]: toolbarPosition === "bottom",
+        [styles.toolbarDisabled]: disabled,
+        [styles.toolbarTop]: toolbarPosition === "top",
+        [styles.toolbarBottom]: toolbarPosition === "bottom",
       }),
       contentContainer: cn(
-        styles?.contentEditableContainer,
+        styles.contentEditableContainer,
         this.props.contentContainerClassName,
         {
           [this.props.contentContainerClassNameDisabled!]: disabled,
-          [styles?.contentEditableContainerDisabled]: disabled,
+          [styles.contentEditableContainerDisabled]: disabled,
         }
       ),
-      content: cn(styles?.contentEditable, this.props.contentClassName, {
+      content: cn(styles.contentEditable, this.props.contentClassName, {
         [this.props.contentClassNameDisabled!]: disabled,
-        [styles?.contentEditableDisabled]: disabled,
+        [styles.contentEditableDisabled]: disabled,
       }),
-      root: cn(styles?.root, this.props.className, {
+      root: cn(this.props.className, {
         [this.props.classNameDisabled!]: disabled,
       }),
-      placeholder: cn(styles?.placeholder, this.props.placeholderClassName, {
+      placeholder: cn(styles.placeholder, this.props.placeholderClassName, {
         [this.props.placeholderClassNameDisabled!]: disabled,
       }),
     };

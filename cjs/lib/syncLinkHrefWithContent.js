@@ -14,7 +14,7 @@ function syncLinkHrefWithContent(element) {
             var isEmail = EMAIL_REGEXP.test(content);
             // Handle mailto case.
             if (isEmail) {
-                anchorElement.href = "mailto:" + content;
+                anchorElement.href = "mailto:".concat(content);
                 return;
             }
             // Handle rest.

@@ -1,12 +1,12 @@
 import React, { ComponentType } from "react";
 import Squire from "squire-rte";
 export interface TogglePropTypes {
+    role?: string;
+    ariaLabel?: string;
     className?: string;
     title?: string;
     children?: React.ReactNode;
     disabled?: boolean;
-    role?: string;
-    ariaLabel?: string;
 }
 /** InjectedProps are props injected by the RTE */
 export interface InjectedProps {

@@ -5,12 +5,12 @@ import * as styles from "./Button.module.css";
 
 export interface ButtonPropTypes
   extends ButtonHTMLAttributes<HTMLButtonElement> {
+  role?: string;
+  ariaLabel?: string;
   className?: string;
   children?: React.ReactNode;
   active?: boolean;
   component?: React.ComponentType<any>;
-  role?: string;
-  ariaLabel?: string;
 }
 
 class Button extends React.Component<ButtonPropTypes> {
@@ -27,7 +27,7 @@ class Button extends React.Component<ButtonPropTypes> {
     return (
       <Component
         type="button"
-        className={cn(className, { [styles?.button]: !component })}
+        className={cn(className, { [styles.button]: !component })}
         aria-pressed={active}
         aria-label={ariaLabel}
         {...rest}

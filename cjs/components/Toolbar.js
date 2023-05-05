@@ -7,6 +7,8 @@ var __extends = (this && this.__extends) || (function () {
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -25,7 +27,11 @@ var __assign = (this && this.__assign) || function () {
 };
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
 }) : (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     o[k2] = m[k];
@@ -67,7 +73,7 @@ var Toolbar = /** @class */ (function (_super) {
     }
     Toolbar.prototype.render = function () {
         var _a = this.props, className = _a.className, rest = __rest(_a, ["className"]);
-        return react_1.default.createElement("div", __assign({ className: classnames_1.default(className, styles === null || styles === void 0 ? void 0 : styles.toolbar) }, rest));
+        return react_1.default.createElement("div", __assign({ className: (0, classnames_1.default)(className, styles.toolbar) }, rest));
     };
     return Toolbar;
 }(react_1.default.Component));

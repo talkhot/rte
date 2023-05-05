@@ -5,12 +5,12 @@ import Button from "../components/Button";
 import { Feature } from "../RTE";
 
 export interface TogglePropTypes {
+  role?: string;
+  ariaLabel?: string;
   className?: string;
   title?: string;
   children?: React.ReactNode;
   disabled?: boolean;
-  role?: string;
-  ariaLabel?: string;
 }
 
 /** InjectedProps are props injected by the RTE */
@@ -177,7 +177,7 @@ function createToggle<AdditionalProps>(
         disabled,
         ButtonComponent,
         role,
-        ariaLabel,
+        ariaLabel
       } = this.props;
       return (
         <Button
