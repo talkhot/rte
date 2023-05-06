@@ -13,6 +13,7 @@ function execCommand(squire: Squire) {
 function isActive(squire: Squire) {
   return squire.hasFormat("I");
 }
+
 function isDisabled(squire: Squire) {
   // Check if a block node already enforces this styling, if so
   // disable this feature.
